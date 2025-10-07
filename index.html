@@ -1,1 +1,81 @@
-<h1>Hello World</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaye Life Timeline</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Jaye Life Timeline</h1>
+        <p class="header-subtitle">Your personal project management system</p>
+    </header>
+    
+    <div class="dashboard">
+        <div class="summary-card">
+            <div class="summary-label">ACTIVE PROJECTS</div>
+            <div class="summary-number" id="projects-count">0</div>
+        </div>
+        <div class="summary-card">
+            <div class="summary-label">TASKS TO COMPLETE</div>
+            <div class="summary-number" id="tasks-count">0</div>
+        </div>
+        <div class="summary-card">
+            <div class="summary-label">COMPLETED TASKS</div>
+            <div class="summary-number" id="completed-count">0</div>
+        </div>
+        <div class="summary-card">
+            <div class="summary-label">PROGRESS</div>
+            <div class="summary-number" id="progress-count">0%</div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="left-column">
+            <section class="todo-section">
+                <h2><i class="fas fa-tasks"></i> To-Do List</h2>
+                <ul class="todo-list" id="todo-list">
+                    <!-- To-do items will appear here -->
+                </ul>
+                <div class="todo-form">
+                    <input type="text" id="todo-input" placeholder="Add a new task...">
+                    <button onclick="addTodo()"><i class="fas fa-plus"></i></button>
+                </div>
+            </section>
+            
+            <section class="notes-section">
+                <h2><i class="fas fa-sticky-note"></i> Quick Notes</h2>
+                <textarea class="notes-textarea" id="quick-notes" placeholder="Write your notes here..."></textarea>
+                <div class="notes-actions">
+                    <button onclick="saveNotes()">Save Notes</button>
+                </div>
+            </section>
+            
+            <section class="project-form">
+                <h2><i class="fas fa-plus-circle"></i> Add New Project</h2>
+                <input type="text" id="project-title" placeholder="Project Title">
+                <textarea id="project-description" placeholder="Project Description"></textarea>
+                <select id="project-status">
+                    <option value="planning">Planning</option>
+                    <option value="progress">In Progress</option>
+                    <option value="completed">Completed</option>
+                </select>
+                <button onclick="addProject()" style="width: 100%">Add Project</button>
+            </section>
+        </div>
+        
+        <div class="right-column">
+            <section id="projects-section">
+                <h2><i class="fas fa-project-diagram"></i> Your Projects</h2>
+                <div id="projects-list">
+                    <!-- Projects will be displayed here -->
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
